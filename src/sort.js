@@ -17,7 +17,6 @@ var buttons = [],
 export function throwToArray() {
   setTimeout(() => {
 		$('#table-body tr').toArray().map((row) => {
-      buttons.push(row.cells[0].getElementsByTagName('BUTTON')[0].id);
       ids.push(row.cells[1]);
       names.push(row.cells[2].getElementsByTagName('A')[0]);
       links.push(row.cells[2]);

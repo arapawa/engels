@@ -33018,7 +33018,6 @@ var buttons = [],
 function throwToArray() {
 	setTimeout(() => {
 		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#table-body tr').toArray().map(row => {
-			buttons.push(row.cells[0].getElementsByTagName('BUTTON')[0].id);
 			ids.push(row.cells[1]);
 			names.push(row.cells[2].getElementsByTagName('A')[0]);
 			links.push(row.cells[2]);
@@ -41984,23 +41983,10 @@ __webpack_require__(/*! ../../js/affix.js */ 353)
 // Draws the table
 function drawTable(records) {
 
-	// Default to sorting by reverse-date
-	records.sort((a, b) => {
-		if (a._rawJson.createdTime < b._rawJson.createdTime) {
-			return 1;
-		}
-		if (a._rawJson.createdTime > b._rawJson.createdTime) {
-			return -1;
-		}
-		return 0;
-	});
-
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#load').html('<strong style="color:blue"> </strong>');
 
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#search').attr('readonly', false);
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#exclusive').attr('disabled', false);
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#load-compiler').attr('disabled', false);
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#reset').attr('disabled', false);
 
 	let tableHTML = '';
 
@@ -42019,33 +42005,6 @@ function drawTable(records) {
 	// Creates an array used for sorting functionality
 	Object(__WEBPACK_IMPORTED_MODULE_2__sort__["b" /* throwToArray */])();
 }
-
-// Make ajax request on a single WP page, pushing the contents into an array
-const requestOnePage = (page, posts, totalPages, pagesReceived) => {
-	const url = `http://thelibrary.adurolife.com/wp-json/wp/v2/posts?page=${page}`;
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.getJSON(url).done(data => {
-		data.map(post => {
-			posts.push({
-				slug: post.slug,
-				title: post.title.rendered,
-				url: post.link,
-				date: post.date,
-				modified: post.modified
-			});
-		});
-	}).fail((jqxhr, textStatus, error) => console.error(`Request Failed: ${textStatus}, ${error}`)).always(() => {
-		pagesReceived.push(page);
-
-		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#progress').html(Math.round(pagesReceived.length / totalPages * 100));
-
-		if (pagesReceived.length >= totalPages) {
-			drawTable(posts);
-
-			const url = 'https://mywellnessnumbers.com/thelibrary/challenges/';
-			__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.post(url, { data: JSON.stringify(posts) }).done(() => console.log('Saved table.'));
-		}
-	});
-};
 
 // Loads table JSON file from api
 function loadTable() {
