@@ -1,0 +1,238 @@
+/* styles for main page */
+
+/* Navbar styles */
+header.navigation {
+  background-color: #369;
+  border-bottom: 1px solid #369;
+  min-height: 60px;
+  width: 100%;
+  z-index: 999;
+  font-family: "Karla", "Open Sans", "Helvetica", "Arial", sans-serif; }
+  header.navigation .navigation-wrapper {
+    position: relative; }
+  header.navigation .navigation-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+  header.navigation .logo {
+    float: left;
+    max-height: 40px;
+    padding: 0.6em 1em; }
+    header.navigation .logo img {
+      max-height: 40px; }
+  header.navigation ul.navigation-menu {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: visible;
+    width: 100%; }
+  header.navigation nav {
+    float: left;
+    min-height: 60px;
+    z-index: 9999999; }
+  header.navigation ul li.nav-link {
+    background: transparent;
+    display: inline;
+    line-height: 60px;
+    text-decoration: none;
+    width: auto;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    z-index: 9999; }
+    header.navigation ul li.nav-link a {
+      padding-right: 1em;
+      color: #fff;
+      display: inline-block;
+      text-decoration: none; }
+      header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
+        color: rgba(255, 255, 255, 0.7); }
+
+/* Table styles */
+#table-container {
+  padding: 20px 14px;
+  overflow: auto;
+  margin-bottom: 0.5em; }
+  #table-container .table {
+    border: 1px solid #000;
+    margin-bottom: 20px; }
+  #table-container th {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000; }
+  #table-container th,
+  #table-container td {
+    padding: 5px;
+    border-right: 1px solid #000;
+    vertical-align: middle; }
+  #table-container th:last-child,
+  #table-container td:last-child {
+    border-right: none; }
+  #table-container table td:first-child {
+    width: 128px;
+    padding-left: 14px; }
+  #table-container table td:nth-child(2) {
+    width: 10%; }
+  #table-container table td:nth-child(5), #table-container td:nth-child(6) {
+    width: 15%; }
+  #table-container table td:nth-child(4) {
+    width: 20%; }
+  #table-container th button {
+    padding: 3px 5px;
+    margin-left: 5px; }
+  #table-container td a {
+  	color: #369;
+  }
+
+input {
+  border: 1px solid #ddd; }
+
+/* Whole page styles - deprecated */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  color: #463e38; }
+
+hr {
+  margin: 25px 0; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+#wrapper {
+
+}
+
+#exclusive {
+  width: auto;
+  margin-left: 5px; }
+
+#search {
+  width: 200px;
+  margin: 20px 25px;
+}
+
+#idList {
+  display: none; }
+
+#loadNumber {
+  margin-left: 10px; }
+
+a {
+  cursor: pointer; }
+
+a:hover {
+  color: #ddd; }
+
+.close:focus,
+.close:hover {
+  color: #ddd; }
+
+#challenge-list {
+  border: 1px solid #000;
+  margin-bottom: 20px; }
+  #challenge-list th {
+    border-bottom: 1px solid #000; }
+  #challenge-list th,
+  #challenge-list td {
+    border-right: 1px solid #000;
+    vertical-align: middle; }
+  #challenge-list input[type=date] {
+    width: 150px;
+    display: block; }
+
+.selectBf {
+  margin-left: 5%;
+  margin-top: 15px;
+  width: 35%;
+  height: 80%; }
+
+.selectAf {
+  margin-left: 8%;
+  margin-top: 15px;
+  width: 35%;
+  height: 80%; }
+
+.codePreview {
+  width: 70%;
+  height: 750px;
+  border: 2px solid #FFF;
+  position: fixed;
+  top: 5%;
+  left: 15%;
+  background-color: grey;
+  overflow-y: scroll; }
+  .codePreview h3 {
+    margin: 0.6em 0;
+    color: #fff; }
+
+.brandingBckgrndColor {
+  background-color: #369; }
+
+.link-color {
+  color: #369; }
+
+#shortCut {
+  background-color: #EEE;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  color: blue;
+  position: absolute;
+  top: 65px;
+  right: 5px;
+  padding: 0 15px; }
+  #shortCut h3 {
+    margin-top: 10px; }
+
+#welcome #eid, #welcome #psk {
+  margin-left: 2%; }
+
+#welcome #eid {
+  width: 10%; }
+
+#welcome #psk {
+  width: 20%; }
+
+.button {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 15px;
+  line-height: 32px;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+  background-color: #d92c27;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase; }
+
+.linkSpec {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 32px;
+  padding: 0 8px; }
+
+
+/* styles for viewing a single challenge */
+#challenge-container {
+  margin: 20px auto;
+  width: 440px;
+}
+
+#challenge-container img {
+  width: 100%;
+}
+
+.brandingBckgrndColor {
+  background-color: #369;
+}
