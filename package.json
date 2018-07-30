@@ -1,9 +1,9 @@
 {
-  "name": "titancoil",
+  "name": "engels",
   "version": "1.0.0",
-  "description": "Titancoil CMS Viewer",
+  "description": "Engels CMS Viewer",
   "main": "index.js",
-  "repository": "https://github.com/dannytpeck/titancoil",
+  "repository": "https://github.com/arapawa/engels",
   "scripts": {
     "start": "webpack",
     "build": "webpack -p --config webpack.production.config.js --progress --colors",
