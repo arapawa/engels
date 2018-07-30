@@ -1,5 +1,3 @@
-/* styles for main page */
-
 /* Navbar styles */
 header.navigation {
   background-color: #369;
@@ -221,18 +219,3 @@ a:hover {
   left: 8px;
   width: 32px;
   padding: 0 8px; }
-
-
-/* styles for viewing a single challenge */
-#challenge-container {
-  margin: 20px auto;
-  width: 440px;
-}
-
-#challenge-container img {
-  width: 100%;
-}
-
-.brandingBckgrndColor {
-  background-color: #369;
-}
