@@ -1,7 +1,7 @@
 /* Navbar styles */
 header.navigation {
-  background-color: #B31015;
-  border-bottom: 1px solid #B31015;
+  background-color: #CD0000;
+  border-bottom: 1px solid #CD0000;
   min-height: 60px;
   width: 100%;
   z-index: 999;
@@ -41,11 +41,11 @@ header.navigation {
     z-index: 9999; }
     header.navigation ul li.nav-link a {
       padding-right: 1em;
-      color: #fff;
+      color: #FFE700;
       display: inline-block;
       text-decoration: none; }
       header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
-        color: rgba(255, 255, 255, 0.7); }
+        color: #FFE700; }
 
 /* Table styles */
 #table-container {
