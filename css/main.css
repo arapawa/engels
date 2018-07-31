@@ -41,11 +41,11 @@ header.navigation {
     z-index: 9999; }
     header.navigation ul li.nav-link a {
       padding-right: 1em;
-      color: #FFE700;
+      color: #FFF;
       display: inline-block;
       text-decoration: none; }
       header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
-        color: #FFE700; }
+        color: #FFF; }
 
 /* Table styles */
 #table-container {
