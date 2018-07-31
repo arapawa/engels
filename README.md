@@ -1,4 +1,4 @@
 # engels
-CMS for viewing from Airtable
+Content Viewer for Airtable content
 
 View at [http://mywellnessnumbers.sftp.adurolife.com/engels/](http://mywellnessnumbers.sftp.adurolife.com/engels/)
