@@ -48,13 +48,26 @@ export function loadTable() {
 			console.error(err);
 			return;
 		} else {
-			// create TableFilter
+			// create TableFilter (https://github.com/koalyptus/TableFilter)
 			var tf = new TableFilter(document.querySelector('.table'), {
 				col_1: 'select',
 		    col_3: 'select',
 		    col_4: 'select',
 		    col_5: 'select',
 		    col_6: 'none',
+        extensions: [{
+            name: 'sort'
+        }],
+
+        /** Bootstrap integration */
+
+        // aligns filter at cell bottom when Bootstrap is enabled
+        filters_cell_tag: 'th',
+
+        // allows Bootstrap table styling
+        themes: [{
+            name: 'transparent'
+        }]
 			});
 			tf.init();
 		}

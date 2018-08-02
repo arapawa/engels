@@ -61,28 +61,32 @@ header.navigation {
   #table-container th,
   #table-container td {
     padding: 5px;
+    border-left: 1px solid #000;
     border-right: 1px solid #000;
     vertical-align: middle; }
   #table-container table td {
     width: 15%;
     padding-left: 14px; }
-  #table-container table td:first-child {
+/*  #table-container table td:first-child {
     width: 120px; }
   #table-container table td:nth-child(2) {
     width: 120px; }
   #table-container table td:nth-child(3) {
     width: 20%; }
   #table-container table td:last-child {
-    padding-left: 0; }
-  #table-container th button {
-    padding: 3px 5px;
-    margin-left: 5px; }
+    padding-left: 0; }*/
   #table-container td a {
   	color: #369;
   }
 
 input {
-  border: 1px solid #ddd; }
+  max-width: 130px;
+  border: 1px solid #ddd; 
+}
+
+select {
+  max-width: 120px;
+}
 
 /* Whole page styles - deprecated */
 html {
