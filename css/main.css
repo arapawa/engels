@@ -47,6 +47,11 @@ header.navigation {
       header.navigation ul li.nav-link a:focus, header.navigation ul li.nav-link a:hover {
         color: #FFF; }
 
+/* Introduction Text styles */
+#intro-text {
+  padding: 1em 3em 0 3em;
+}
+
 /* Table styles */
 #table-container {
   padding: 20px 14px;
