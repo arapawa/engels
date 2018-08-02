@@ -1,6 +1,7 @@
 /* This file is for making all the ajax requests to WP and populating the table's contents */
 import $ from 'jquery';
 import Airtable from 'airtable';
+import TableFilter from 'tablefilter';
 import { addRemove, throwToArray } from './sort';
 
 // Draws the table
@@ -31,6 +32,7 @@ function drawTable(records) {
 
 	// Creates an array used for sorting functionality
 	throwToArray();
+
 }
 
 // Loads table JSON file from api
@@ -44,12 +46,25 @@ export function loadTable() {
 		drawTable(records);
 
 		fetchNextPage();
+
 	}, function done(err) {
 		if (err) {
 			console.error(err);
 			return;
+		} else {
+			// create TableFilter
+			var tf = new TableFilter(document.querySelector('.table'), {
+				col_1: 'select',
+		    col_3: 'select',
+		    col_4: 'select',
+		    col_5: 'select',
+		    col_6: 'none',
+			});
+			tf.init();
 		}
 
 	});
+
+
 
 }
