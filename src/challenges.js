@@ -14,10 +14,14 @@ function drawTable(records) {
 	let tableHTML = '';
 
 	records.map((record, i) => {
+		var teamOrInvidivual = record.fields['Team Activity'] === 'yes' ? 'Team' : 'Individual';
 		tableHTML +=
 			`<tr>
 				<td><a href="http://mywellnessnumbers.sftp.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
 				<td><span>${record.fields['Category']}</span></td>
+				<td><span>${record.fields['Reward Occurrence']}</span></td>
+				<td><span>${record.fields['Device Enabled']}</span></td>
+				<td><span>${teamOrInvidivual}</span></td>
 				<td><span>${record.fields['Instructions']}</span></td>
 				<td><img src="${record.fields['Header Image']}" width="100%"/></td>
 			</tr>`;
