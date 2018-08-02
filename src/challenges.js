@@ -23,7 +23,7 @@ function drawTable(records) {
 				<td class="column-occurrence"><span>${record.fields['Reward Occurrence']}</span></td>
 				<td class="column-device"><span>${record.fields['Device Enabled']}</span></td>
 				<td class="column-team"><span>${teamOrInvidivual}</span></td>
-				<td class="column-image"><img src="${record.fields['Header Image']}" width="100%"/></td>
+				<td class="column-image"><a href="${record.fields['Header Image']}" target="_blank"><img src="${record.fields['Header Image']}" width="100%"/></a></td>
 			</tr>`;
 	});
 
