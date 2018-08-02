@@ -2,7 +2,6 @@
 import $ from 'jquery';
 import Airtable from 'airtable';
 import TableFilter from 'tablefilter';
-import { addRemove, throwToArray } from './sort';
 
 // Draws the table
 function drawTable(records) {
@@ -29,9 +28,6 @@ function drawTable(records) {
 	});
 
 	$('#table-body').append(tableHTML);
-
-	// Creates an array used for sorting functionality
-	throwToArray();
 
 }
 

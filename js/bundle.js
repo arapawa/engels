@@ -32987,69 +32987,7 @@ module.exports = Table;
 
 
 /***/ }),
-/* 135 */
-/*!*********************!*\
-  !*** ./src/sort.js ***!
-  \*********************/
-/*! exports provided: throwToArray, findChallenges */
-/*! exports used: findChallenges, throwToArray */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = throwToArray;
-/* harmony export (immutable) */ __webpack_exports__["a"] = findChallenges;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(/*! jquery */ 94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* This file is for manipulation of the table - sorting, clearing, and sending table's results to the compiler */
-
-
-var buttons = [],
-    ids = [],
-    names = [],
-    links = [],
-    hiddenDateCreateds = [],
-    dateCreateds = [],
-    hiddenDateUpdateds = [],
-    dateUpdateds = [],
-    buttonArray = [],
-    countArray = [];
-
-// Put all the values into various arrays
-function throwToArray() {
-	setTimeout(() => {
-		__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#table-body tr').toArray().map(row => {
-			ids.push(row.cells[1]);
-			names.push(row.cells[2].getElementsByTagName('A')[0]);
-			links.push(row.cells[2]);
-			hiddenDateCreateds.push(row.cells[3].getElementsByTagName('SPAN')[0]);
-			dateCreateds.push(row.cells[3].getElementsByTagName('SPAN')[1]);
-			hiddenDateUpdateds.push(row.cells[4].getElementsByTagName('SPAN')[0]);
-			dateUpdateds.push(row.cells[4].getElementsByTagName('SPAN')[1]);
-		});
-	}, 500);
-}
-
-// Function for find challenge field - Uses text to search challenges by name/id
-function findChallenges() {
-	const text = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).val();
-
-	// Look through each row to find match for a value in input field -- display none for all things that are not that
-	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#table-body tr').toArray().map(row => {
-		if (text) {
-			let slug = row.cells[1].innerText;
-			let title = row.cells[2].innerText.toLowerCase();
-			if (slug.indexOf(text) > -1 || title.indexOf(text) > -1) {
-				row.style.display = 'table-row';
-			} else {
-				row.style.display = 'none';
-			}
-		} else {
-			row.style.display = 'table-row';
-		}
-	});
-}
-
-/***/ }),
+/* 135 */,
 /* 136 */
 /*!*******************************************!*\
   !*** multi babel-polyfill ./src/index.js ***!
@@ -39409,7 +39347,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(/*! jquery */ 94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__challenges__ = __webpack_require__(/*! ./challenges */ 354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sort__ = __webpack_require__(/*! ./sort */ 135);
 
 
 window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_1_jquery___default.a;
@@ -39417,11 +39354,7 @@ __webpack_require__(/*! bootstrap */ 341);
 
 
 
-
 window.onload = __WEBPACK_IMPORTED_MODULE_2__challenges__["a" /* loadTable */];
-
-// Event listeners
-__WEBPACK_IMPORTED_MODULE_1_jquery___default()('#search').keyup(__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.debounce(__WEBPACK_IMPORTED_MODULE_3__sort__["a" /* findChallenges */], 175));
 
 /***/ }),
 /* 340 */
@@ -41976,9 +41909,7 @@ __webpack_require__(/*! ../../js/affix.js */ 353)
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_airtable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_airtable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_tablefilter__ = __webpack_require__(/*! tablefilter */ 376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_tablefilter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_tablefilter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sort__ = __webpack_require__(/*! ./sort */ 135);
 /* This file is for making all the ajax requests to WP and populating the table's contents */
-
 
 
 
@@ -42007,9 +41938,6 @@ function drawTable(records) {
 	});
 
 	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#table-body').append(tableHTML);
-
-	// Creates an array used for sorting functionality
-	Object(__WEBPACK_IMPORTED_MODULE_3__sort__["b" /* throwToArray */])();
 }
 
 // Loads table JSON file from api
