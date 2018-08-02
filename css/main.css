@@ -67,10 +67,10 @@ header.navigation {
     width: 15%;
     padding-left: 14px; }
   #table-container table td:first-child {
-    width: 10%; }
+    width: 120px; }
   #table-container table td:nth-child(2) {
-    width: 10%; }
-  #table-container table td:nth-child(6) {
+    width: 120px; }
+  #table-container table td:nth-child(3) {
     width: 20%; }
   #table-container table td:last-child {
     padding-left: 0; }

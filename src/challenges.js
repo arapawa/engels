@@ -19,10 +19,10 @@ function drawTable(records) {
 			`<tr>
 				<td class="column-title"><a href="http://mywellnessnumbers.sftp.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
 				<td class="column-category"><span>${record.fields['Category']}</span></td>
+				<td class="column-instructions"><span>${record.fields['Instructions']}</span></td>
 				<td class="column-occurrence"><span>${record.fields['Reward Occurrence']}</span></td>
 				<td class="column-device"><span>${record.fields['Device Enabled']}</span></td>
 				<td class="column-team"><span>${teamOrInvidivual}</span></td>
-				<td class="column-instructions"><span>${record.fields['Instructions']}</span></td>
 				<td class="column-image"><img src="${record.fields['Header Image']}" width="100%"/></td>
 			</tr>`;
 	});
