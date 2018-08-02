@@ -17,13 +17,13 @@ function drawTable(records) {
 		var teamOrInvidivual = record.fields['Team Activity'] === 'yes' ? 'Team' : 'Individual';
 		tableHTML +=
 			`<tr>
-				<td><a href="http://mywellnessnumbers.sftp.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
-				<td><span>${record.fields['Category']}</span></td>
-				<td><span>${record.fields['Reward Occurrence']}</span></td>
-				<td><span>${record.fields['Device Enabled']}</span></td>
-				<td><span>${teamOrInvidivual}</span></td>
-				<td><span>${record.fields['Instructions']}</span></td>
-				<td><img src="${record.fields['Header Image']}" width="100%"/></td>
+				<td class="column-title"><a href="http://mywellnessnumbers.sftp.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
+				<td class="column-category"><span>${record.fields['Category']}</span></td>
+				<td class="column-occurrence"><span>${record.fields['Reward Occurrence']}</span></td>
+				<td class="column-device"><span>${record.fields['Device Enabled']}</span></td>
+				<td class="column-team"><span>${teamOrInvidivual}</span></td>
+				<td class="column-instructions"><span>${record.fields['Instructions']}</span></td>
+				<td class="column-image"><img src="${record.fields['Header Image']}" width="100%"/></td>
 			</tr>`;
 	});
 
