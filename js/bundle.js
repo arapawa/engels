@@ -41996,7 +41996,6 @@ function drawTable(records) {
 				<td><span>${record.fields['Category']}</span></td>
 				<td><span>${record.fields['Instructions']}</span></td>
 				<td><img src="${record.fields['Header Image']}" width="100%"/></td>
-				<td><span style="display:none">${record._rawJson.createdTime}</span><span>${new Date(record._rawJson.createdTime).toDateString()}</span></td>
 			</tr>`;
 	});
 
