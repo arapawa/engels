@@ -14,17 +14,30 @@ function drawTable(records) {
 	let tableHTML = '';
 
 	records.map((record, i) => {
-		var teamOrInvidivual = record.fields['Team Activity'] === 'yes' ? 'Team' : 'Individual';
+		const teamOrInvidivual = record.fields['Team Activity'] === 'yes' ? 'Team' : 'Individual';
+		const category = record.fields['Category'] ? record.fields['Category'] : '';
+
+		let headerImage = record.fields['Header Image'];
+		if (headerImage) {
+			headerImage = headerImage.replace('http://thelibrary.adurolife.com/', 'https://mywellnessnumbers.com/thelibrary/');
+		}
+
 		tableHTML +=
 			`<tr>
-				<td class="column-title"><a href="http://mywellnessnumbers.sftp.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
-				<td class="column-category"><span>${record.fields['Category']}</span></td>
+				<td class="column-title"><a href="https://calendarbuilder.dev.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
+				<td class="column-category"><span>${category}</span></td>
 				<td class="column-instructions"><span>${record.fields['Instructions']}</span></td>
 				<td class="column-occurrence"><span>${record.fields['Reward Occurrence']}</span></td>
 				<td class="column-device"><span>${record.fields['Device Enabled']}</span></td>
-				<td class="column-team"><span>${teamOrInvidivual}</span></td>
-				<td class="column-image"><a href="${record.fields['Header Image']}" target="_blank"><img src="${record.fields['Header Image']}" width="100%"/></a></td>
-			</tr>`;
+				<td class="column-team"><span>${teamOrInvidivual}</span></td>`;
+
+		if (headerImage) {
+			tableHTML += `<td class="column-image"><a href="${headerImage}" target="_blank"><img src="${headerImage}" width="100%"/></a></td>`;
+		} else {
+			tableHTML += '<td class="column-image"></td>';
+		}
+
+		tableHTML += '</tr>';
 	});
 
 	$('#table-body').append(tableHTML);
