@@ -65,3 +65,6 @@ typings/
 
 # bundle
 js/
+
+# We use yarn 'round these parts
+package-lock.json
