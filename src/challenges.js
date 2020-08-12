@@ -30,7 +30,7 @@ function drawTable(records) {
 		// Strip out old branding bits (YOUR CHALLENGE, forced styles)
 		let instructions = record.fields['Instructions']
 			.replace(/YOUR CHALLENGE: /, '')
-			.replace(/ style="font-weight: bold; font-size: 14px;*/, '')
+			.replace(/ style="font-weight: bold; font-size: 14px;*"/, '')
 			.replace(/ style="font-size:14px; font-weight:bold"/, '')
 			.replace(/<\/*strong>/g, '');
 
