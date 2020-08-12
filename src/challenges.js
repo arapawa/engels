@@ -22,11 +22,23 @@ function drawTable(records) {
 			headerImage = headerImage.replace('http://thelibrary.adurolife.com/', 'https://mywellnessnumbers.com/thelibrary/');
 		}
 
+		// Remove years from the title
+		let title = record.fields['Title']
+			.replace(/2017: /, '')
+			.replace(/2018: /, '')
+
+		// Strip out old branding bits (YOUR CHALLENGE, forced styles)
+		let instructions = record.fields['Instructions']
+			.replace(/YOUR CHALLENGE: /, '')
+			.replace(/ style="font-weight: bold; font-size: 14px;*"/, '')
+			.replace(/ style="font-size:14px; font-weight:bold"/, '')
+			.replace(/<\/*strong>/g, '');
+
 		tableHTML +=
 			`<tr>
-				<td class="column-title"><a href="https://calendarbuilder.dev.adurolife.com/titancoil/#/${record.id}" target="_blank">${record.fields['Title']}</a></td>
+				<td class="column-title"><a href="https://calendarbuilder.dev.adurolife.com/titancoil/#/${record.id}" target="_blank">${title}</a></td>
 				<td class="column-category"><span>${category}</span></td>
-				<td class="column-instructions"><span>${record.fields['Instructions']}</span></td>
+				<td class="column-instructions">${instructions}</td>
 				<td class="column-occurrence"><span>${record.fields['Reward Occurrence']}</span></td>
 				<td class="column-device"><span>${record.fields['Device Enabled']}</span></td>
 				<td class="column-team"><span>${teamOrInvidivual}</span></td>`;
