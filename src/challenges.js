@@ -19,7 +19,7 @@ function drawTable(records) {
 
 		let headerImage = record.fields['Header Image'];
 		if (headerImage) {
-			headerImage = headerImage.replace('http://thelibrary.adurolife.com/', 'https://mywellnessnumbers.com/thelibrary/');
+			headerImage = headerImage.replace('OLD_URL', 'NEW_URL');
 		}
 
 		// Remove years from the title
@@ -36,7 +36,7 @@ function drawTable(records) {
 
 		tableHTML +=
 			`<tr>
-				<td class="column-title"><a href="https://calendarbuilder.dev.adurolife.com/titancoil/#/${record.id}" target="_blank">${title}</a></td>
+				<td class="column-title"><a href="/titancoil/#/${record.id}" target="_blank">${title}</a></td>
 				<td class="column-category"><span>${category}</span></td>
 				<td class="column-instructions">${instructions}</td>
 				<td class="column-occurrence"><span>${record.fields['Reward Occurrence']}</span></td>
@@ -59,7 +59,7 @@ function drawTable(records) {
 // Loads table JSON file from api
 export function loadTable() {
 
-	const base = new Airtable({ apiKey: 'keyCxnlep0bgotSrX' }).base('appa7mnDuYdgwx2zP');
+	const base = new Airtable({ apiKey: 'YOUR_KEY_HERE' }).base('YOUR_BASE_HERE');
 	base('Challenges').select({
 		view: 'Grid view'
 	}).eachPage(function page(records, fetchNextPage) {
